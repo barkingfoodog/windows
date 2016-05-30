@@ -152,7 +152,7 @@
         "UPDATE={{user `update`}}"
       ],
       "scripts": [
-        "script/vagrant.bat",
+        "script/vagrant.bat"
       ],
       "type": "windows-shell"
     },
