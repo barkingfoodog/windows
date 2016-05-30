@@ -161,6 +161,12 @@
         "script/sdelete.bat"
       ],
       "type": "windows-shell"
+    },
+    {
+      "scripts": [
+        "script/suran_salt.ps1"
+      ],
+      "type": "powershell"
     }
   ],
   "variables": {
