@@ -176,7 +176,7 @@
         "script/sdelete.bat"
       ],
       "type": "windows-shell"
-    },
+    }
   ],
   "variables": {
     "cm": "chef",
