@@ -152,13 +152,14 @@
         "UPDATE={{user `update`}}"
       ],
       "scripts": [
-        "script/vagrant.bat"
+        "script/vagrant.bat",
+        "script/cmtool.bat"
       ],
       "type": "windows-shell"
     },
     {
       "scripts": [
-        "script/suran_salt.ps1"
+        "script/test_kitchen_support.ps1"
       ],
       "type": "powershell"
     },
