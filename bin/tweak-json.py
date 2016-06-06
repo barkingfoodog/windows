@@ -137,10 +137,10 @@ for i, a in enumerate(json_data['builders']):
     a['skip_compaction'] = compression_level == 0
 
     if winrm:
-      a['communicator_type'] = 'winrm'
+      a['communicator'] = 'winrm'
       a['winrm_username'] = 'vagrant'
       a['winrm_password'] = 'vagrant'
-      a['winrm_wait_timeout'] = timeout_seconds + 's'
+      a['winrm_timeout'] = timeout_seconds + 's'
 
     if not tools_upload_flavor:
       if 'tools_upload_flavor' in a:
@@ -344,7 +344,7 @@ new_data = json_data
 
 mtime = os.path.getmtime(json_file_path)
 
-new_data  = json.dumps(new_data, sort_keys=True, indent=2)
+new_data  = json.dumps(new_data, sort_keys=True, indent=2, separators=(',', ': '))
 json_file.close()
 
 json_file = open(json_file_path, 'wb')

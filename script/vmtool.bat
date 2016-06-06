@@ -3,10 +3,10 @@
 @if defined PACKER_DEBUG (@echo on) else (@echo off)
 
 if not defined PACKER_SEARCH_PATHS set PACKER_SEARCH_PATHS="%USERPROFILE%" a: b: c: d: e: f: g: h: i: j: k: l: m: n: o: p: q: r: s: t: u: v: w: x: y: z:
-if not defined SEVENZIP_32_URL set SEVENZIP_32_URL=http://www.7-zip.org/a/7z938.msi
-if not defined SEVENZIP_64_URL set SEVENZIP_64_URL=http://www.7-zip.org/a/7z938-x64.msi
-if not defined VBOX_ISO_URL set VBOX_ISO_URL=http://download.virtualbox.org/virtualbox/4.3.28/VBoxGuestAdditions_4.3.28.iso
-if not defined VMWARE_TOOLS_TAR_URL set VMWARE_TOOLS_TAR_URL=https://softwareupdate.vmware.com/cds/vmw-desktop/ws/12.0.0/2985596/windows/packages/tools-windows.tar
+if not defined SEVENZIP_32_URL set SEVENZIP_32_URL=http://www.7-zip.org/a/7z1600.msi
+if not defined SEVENZIP_64_URL set SEVENZIP_64_URL=http://www.7-zip.org/a/7z1600-x64.msi
+if not defined VBOX_ISO_URL set VBOX_ISO_URL=http://download.virtualbox.org/virtualbox/5.0.20/VBoxGuestAdditions_5.0.20.iso
+if not defined VMWARE_TOOLS_TAR_URL set VMWARE_TOOLS_TAR_URL=https://softwareupdate.vmware.com/cds/vmw-desktop/ws/12.1.1/3770994/windows/packages/tools-windows.tar
 goto main
 
 ::::::::::::
@@ -110,9 +110,16 @@ set VMWARE_TOOLS_SETUP_PATH=
 :vmware_tools_setup_path_search
 @for %%i in (%PACKER_SEARCH_PATHS%) do @if not defined VMWARE_TOOLS_SETUP_PATH @if exist "%%~i\VMwareToolsUpgrader.exe" set VMWARE_TOOLS_SETUP_PATH=%%~i\%VMWARE_TOOLS_SETUP_EXE%
 if defined VMWARE_TOOLS_SETUP_PATH goto install_vmware_tools
-if not defined VMWARE_TOOLS_SETUP_PATH ( if defined VMWARE_TOOLS_MOUNTED goto vmware_tools_setup_path_search )
+:: vmware_tools_setup_path_search isn't defined
+:: if not defined VMWARE_TOOLS_SETUP_PATH ( if defined VMWARE_TOOLS_MOUNTED goto vmware_tools_setup_path_search )
 set VMWARE_TOOLS_ISO_PATH=
 @for %%i in (%PACKER_SEARCH_PATHS%) do @if not defined VMWARE_TOOLS_ISO_PATH @if exist "%%~i\%VMWARE_TOOLS_ISO%" set VMWARE_TOOLS_ISO_PATH=%%~i\%VMWARE_TOOLS_ISO%
+
+:: if windows.iso is zero bytes, then download it
+set _VMWARE_TOOLS_SIZE=0
+if defined VMWARE_TOOLS_ISO_PATH for %%i in (%VMWARE_TOOLS_ISO_PATH%) do set _VMWARE_TOOLS_SIZE=%%~zi
+if %_VMWARE_TOOLS_SIZE% EQU 0 set VMWARE_TOOLS_ISO_PATH=
+
 if defined VMWARE_TOOLS_ISO_PATH goto install_vmware_tools_from_iso
 if exist "%SystemRoot%\_download.cmd" (
   call "%SystemRoot%\_download.cmd" "%VMWARE_TOOLS_TAR_URL%" "%VMWARE_TOOLS_TAR_PATH%"
@@ -181,9 +188,14 @@ pushd "%VBOX_ISO_DIR%"
 set VBOX_SETUP_PATH=
 @for %%i in (%PACKER_SEARCH_PATHS%) do @if not defined VBOX_SETUP_PATH @if exist "%%~i\%VBOX_SETUP_EXE%" set VBOX_SETUP_PATH=%%~i\%VBOX_SETUP_EXE%
 if defined VBOX_SETUP_PATH goto install_vbox_guest_additions
-set VBOX_ISO_PATH=
-@for %%i in (%PACKER_SEARCH_PATHS%) do @if not defined VBOX_ISO_PATH @if exist "%%~i\%VBOX_ISO%" set VBOX_ISO_PATH=%%~i\%VBOX_ISO%
-if defined VBOX_ISO_PATH goto install_vbox_guest_additions_from_iso
+
+@for %%i in (%PACKER_SEARCH_PATHS%) do @if exist "%%~i\%VBOX_ISO%" set VBOX_ISO_PATH=%%~i\%VBOX_ISO%
+
+:: if VBoxGuestAdditions.iso is zero bytes, then download it
+set _VBOX_ISO_SIZE=0
+if exist "%VBOX_ISO_PATH%" for %%i in (%VBOX_ISO_PATH%) do set _VBOX_ISO_SIZE=%%~zi
+if %_VBOX_ISO_SIZE% GTR 0 goto install_vbox_guest_additions_from_iso
+
 if exist "%SystemRoot%\_download.cmd" (
   call "%SystemRoot%\_download.cmd" "%VBOX_ISO_URL%" "%VBOX_ISO_PATH%"
 ) else (
@@ -246,16 +258,40 @@ del /F "%PARALLELS_ISO_PATH"
 goto :exit0
 
 :exit0
-popd
-@ping 127.0.0.1
 @ver>nul
 @goto :exit
 
 :exit1
-popd
-@ping 127.0.0.1
 @verify other 2>nul
+@goto :exit
 
 :exit
-@echo ==^> Script exiting with errorlevel %ERRORLEVEL%
-@exit /b %ERRORLEVEL%
+@set _ERRORLEVEL=%ERRORLEVEL%
+@echo ==^> Script exiting with errorlevel %_ERRORLEVEL%
+@popd
+@ping 127.0.0.1
+
+@if %_ERRORLEVEL% gtr 0 (@call :error) else (@call :pause)
+@goto :_exit
+
+:error
+@if not defined PACKER_PAUSE_ON_ERROR goto :eof
+@echo Packer paused. Press Ctrl-C to abort:
+@pause
+@goto :eof
+
+:pause
+@if PACKER_PAUSE leq 0 goto :eof
+@set _TEMPNAME=%TEMP%\%~nx0-%RANDOM%.tmp
+@for /L %%i in (1,1,%PACKER_PAUSE%) do @call :pause1 %%i
+@del "%_TEMPNAME%"
+@goto :eof
+
+:pause1
+@echo.|time|findstr /R /C:": [0-9]">%_TEMPNAME%
+@for /F "tokens=5* " %%a in (%_TEMPNAME%) do @echo %%a: Waiting %1 of %PACKER_PAUSE% seconds...
+@choice /C Y /N /T 1 /D Y /M " " >NUL
+@goto :eof
+
+:_exit
+@exit /b %_ERRORLEVEL%
