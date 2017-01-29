@@ -219,7 +219,7 @@ if not exist a:\oracle-cert.cer echo ==^> ERROR: File not found: a:\oracle-cert.
 echo ==^> Installing Oracle certificate to keep install silent
 certutil -addstore -f "TrustedPublisher" a:\oracle-cert.cer
 echo ==^> Installing VirtualBox Guest Additions
-"%VBOX_SETUP_PATH%" /S
+"%VBOX_SETUP_PATH%"
 @if errorlevel 1 echo ==^> WARNING: Error %ERRORLEVEL% was returned by: "%VBOX_SETUP_PATH%" /S
 ver>nul
 goto :exit0
