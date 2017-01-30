@@ -154,9 +154,6 @@
         "script/sdelete.bat"
       ],
       "type": "windows-shell"
-    },
-    {
-      "type": "windows-restart"
     }
   ],
   "variables": {
