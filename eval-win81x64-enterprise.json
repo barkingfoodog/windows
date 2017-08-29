@@ -14,7 +14,6 @@
         "floppy/install-winrm.cmd",
         "floppy/passwordchange.bat",
         "floppy/powerconfig.bat",
-        "floppy/update.bat",
         "floppy/zz-start-transports.cmd"
       ],
       "guest_os_type": "windows8-64",
