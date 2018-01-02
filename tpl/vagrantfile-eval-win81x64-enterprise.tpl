@@ -37,8 +37,9 @@ Vagrant.configure("2") do |config|
   ["vmware_fusion", "vmware_workstation"].each do |provider|
     config.vm.provider provider do |v, override|
       v.gui = true
-      v.vmx["memsize"] = "1536"
-      v.vmx["numvcpus"] = "1"
+      v.linked_clone = true
+      v.vmx["memsize"] = "2048"
+      v.vmx["numvcpus"] = "2"
       v.vmx["cpuid.coresPerSocket"] = "1"
       v.vmx["ethernet0.virtualDev"] = "vmxnet3"
       v.vmx["RemoteDisplay.vnc.enabled"] = "false"
