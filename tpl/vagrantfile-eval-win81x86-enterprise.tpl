@@ -20,6 +20,18 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--vram", "256"]
     v.customize ["setextradata", "global", "GUI/MaxGuestResolution", "any"]
     v.customize ["setextradata", :id, "CustomVideoMode1", "1024x768x32"]
+
+    config.trigger.before :destroy do
+      id_file = ".vagrant/machines/default/virtualbox/id"
+      machine_id = File.read(id_file) if File.exist?(id_file)
+      if !machine_id.nil?
+        pid = `ps -ax | grep #{machine_id} | grep -v grep | cut -d ' ' -f 1`
+        if pid =~ /\d+/
+          info "Killing #{machine_id} with pid #{pid}"
+          run "kill -9 #{pid}"
+        end
+      end
+    end
   end
 
   ["vmware_fusion", "vmware_workstation"].each do |provider|
