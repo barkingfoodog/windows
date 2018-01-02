@@ -70,7 +70,7 @@
           "modifyvm",
           "{{.Name}}",
           "--memory",
-          "3072"
+          "4096"
         ],
         [
           "modifyvm",

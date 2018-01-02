@@ -31,7 +31,7 @@
       "vm_name": "eval-win10x86-enterprise",
       "vmx_data": {
         "cpuid.coresPerSocket": "1",
-        "memsize": "2048",
+        "memsize": "4096",
         "numvcpus": "2",
         "scsi0.virtualDev": "lsisas1068"
       },
