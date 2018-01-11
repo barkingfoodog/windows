@@ -32,7 +32,7 @@
         "numvcpus": "2"
       },
       "winrm_password": "vagrant",
-      "winrm_timeout": "10000s",
+      "winrm_timeout": "100000s",
       "winrm_username": "vagrant"
     },
     {
@@ -79,7 +79,7 @@
       ],
       "vm_name": "eval-win2008r2-standard",
       "winrm_password": "vagrant",
-      "winrm_timeout": "10000s",
+      "winrm_timeout": "100000s",
       "winrm_username": "vagrant"
     },
     {
@@ -122,7 +122,7 @@
       "type": "parallels-iso",
       "vm_name": "eval-win2008r2-standard",
       "winrm_password": "vagrant",
-      "winrm_timeout": "10000s",
+      "winrm_timeout": "100000s",
       "winrm_username": "vagrant"
     }
   ],
