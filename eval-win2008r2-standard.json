@@ -14,7 +14,8 @@
         "floppy/passwordchange.bat",
         "floppy/powerconfig.bat",
         "floppy/win2008r2-standard/Autounattend.xml",
-        "floppy/_update.bat",
+        "floppy/update.bat",
+        "floppy/_post_update_install.bat",
         "floppy/zz-start-transports.cmd"
       ],
       "guest_os_type": "windows7srv-64",
