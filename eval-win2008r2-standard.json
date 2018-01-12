@@ -16,6 +16,7 @@
         "floppy/powerconfig.bat",
         "floppy/win2008r2-standard/Autounattend.xml",
         "floppy/update.bat",
+        "floppy/z-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
       "guest_os_type": "windows7srv-64",
@@ -53,6 +54,7 @@
         "floppy/powerconfig.bat",
         "floppy/win2008r2-standard/Autounattend.xml",
         "floppy/update.bat",
+        "floppy/z-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
       "guest_additions_mode": "attach",
@@ -100,6 +102,7 @@
         "floppy/powerconfig.bat",
         "floppy/win2008r2-standard/Autounattend.xml",
         "floppy/update.bat",
+        "floppy/z-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
       "guest_os_type": "win-2008",
