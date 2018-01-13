@@ -8,6 +8,7 @@
         "floppy/01-install-wget.cmd",
         "floppy/_download.cmd",
         "floppy/_packer_config.cmd",
+        "floppy/_post_update_install.bat",
         "floppy/disablewinupdate.bat",
         "floppy/fixnetwork.ps1",
         "floppy/install-winrm.cmd",
@@ -16,6 +17,8 @@
         "floppy/powerconfig.bat",
         "floppy/upgrade-wua.bat",
         "floppy/win7x64-enterprise/Autounattend.xml",
+        "floppy/update.bat",
+        "floppy/z-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
       "guest_os_type": "windows7-64",
@@ -33,7 +36,7 @@
         "numvcpus": "2"
       },
       "winrm_password": "vagrant",
-      "winrm_timeout": "10000s",
+      "winrm_timeout": "100000s",
       "winrm_username": "vagrant"
     },
     {
@@ -44,6 +47,7 @@
         "floppy/01-install-wget.cmd",
         "floppy/_download.cmd",
         "floppy/_packer_config.cmd",
+        "floppy/_post_update_install.bat",
         "floppy/disablewinupdate.bat",
         "floppy/fixnetwork.ps1",
         "floppy/install-winrm.cmd",
@@ -53,6 +57,8 @@
         "floppy/powerconfig.bat",
         "floppy/upgrade-wua.bat",
         "floppy/win7x64-enterprise/Autounattend.xml",
+        "floppy/update.bat",
+        "floppy/z-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
       "guest_additions_mode": "attach",
@@ -81,7 +87,7 @@
       ],
       "vm_name": "eval-win7x64-enterprise",
       "winrm_password": "vagrant",
-      "winrm_timeout": "10000s",
+      "winrm_timeout": "100000s",
       "winrm_username": "vagrant"
     },
     {
@@ -92,6 +98,7 @@
         "floppy/01-install-wget.cmd",
         "floppy/_download.cmd",
         "floppy/_packer_config.cmd",
+        "floppy/_post_update_install.bat",
         "floppy/disablewinupdate.bat",
         "floppy/fixnetwork.ps1",
         "floppy/install-winrm.cmd",
@@ -100,6 +107,8 @@
         "floppy/powerconfig.bat",
         "floppy/upgrade-wua.bat",
         "floppy/win7x64-enterprise/Autounattend.xml",
+        "floppy/update.bat",
+        "floppy/z-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
       "guest_os_type": "win-7",
@@ -125,7 +134,7 @@
       "type": "parallels-iso",
       "vm_name": "eval-win7x64-enterprise",
       "winrm_password": "vagrant",
-      "winrm_timeout": "20000s",
+      "winrm_timeout": "100000s",
       "winrm_username": "vagrant"
     }
   ],
