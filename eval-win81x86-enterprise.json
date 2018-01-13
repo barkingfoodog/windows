@@ -17,7 +17,7 @@
         "floppy/eval-win81x86-enterprise/Autounattend.xml",
         "floppy/powerconfig.bat",
         "floppy/update.bat",
-        "floppy/z-install-winrm.cmd",
+        "floppy/zz-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
       "guest_os_type": "windows8",
@@ -57,7 +57,7 @@
         "floppy/eval-win81x86-enterprise/Autounattend.xml",
         "floppy/powerconfig.bat",
         "floppy/update.bat",
-        "floppy/z-install-winrm.cmd",
+        "floppy/zz-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
       "guest_additions_mode": "attach",
@@ -112,7 +112,7 @@
         "floppy/eval-win81x86-enterprise/Autounattend.xml",
         "floppy/powerconfig.bat",
         "floppy/update.bat",
-        "floppy/z-install-winrm.cmd",
+        "floppy/zz-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
       "guest_os_type": "win-8.1",

@@ -18,7 +18,7 @@
         "floppy/upgrade-wua.bat",
         "floppy/win7x64-enterprise/Autounattend.xml",
         "floppy/update.bat",
-        "floppy/z-install-winrm.cmd",
+        "floppy/zz-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
       "guest_os_type": "windows7-64",
@@ -58,7 +58,7 @@
         "floppy/upgrade-wua.bat",
         "floppy/win7x64-enterprise/Autounattend.xml",
         "floppy/update.bat",
-        "floppy/z-install-winrm.cmd",
+        "floppy/zz-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
       "guest_additions_mode": "attach",
@@ -108,7 +108,7 @@
         "floppy/upgrade-wua.bat",
         "floppy/win7x64-enterprise/Autounattend.xml",
         "floppy/update.bat",
-        "floppy/z-install-winrm.cmd",
+        "floppy/zz-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
       "guest_os_type": "win-7",
