@@ -9,7 +9,7 @@ Option Explicit
 
 deleteStartupEntry
 
-Dim updateSession, updateSearcher, searchResult
+Dim updateSession, updateSearcher, searchResult, updatesRequiringUserInput, updateIterator, update
 On Error Resume Next
 Set updateSession = CreateObject("Microsoft.Update.Session")
 If Err.Number <> 0 Then
@@ -33,6 +33,18 @@ If Err.Number <> 0 Then
     LogWrite Err.Description
 End If
 On Error Goto 0
+updatesRequiringUserInput = 0
+For updateIterator = 0 to searchResult.Updates.Count-1
+    Set update = searchResult.Updates.Item(updateIterator)
+    If update.InstallationBehavior.CanRequestUserInput Then
+        updatesRequiringUserInput = updatesRequiringUserInput + 1
+    End If
+Next
+If searchResult.Updates.Count = updatesRequiringUserInput Then
+    LogWrite "All updates require user input."
+    ExecutePostInstallBatch
+    WScript.Quit
+End If
 If searchResult.Updates.Count Then
     LogWrite "There are " & searchResult.Updates.Count & " applicable updates"
 End if
