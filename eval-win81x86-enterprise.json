@@ -16,7 +16,7 @@
         "floppy/passwordchange.bat",
         "floppy/eval-win81x86-enterprise/Autounattend.xml",
         "floppy/powerconfig.bat",
-        "floppy/update.bat",
+        "floppy/update81.bat",
         "floppy/zz-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
@@ -56,7 +56,7 @@
         "floppy/passwordchange.bat",
         "floppy/eval-win81x86-enterprise/Autounattend.xml",
         "floppy/powerconfig.bat",
-        "floppy/update.bat",
+        "floppy/update81.bat",
         "floppy/zz-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
@@ -111,7 +111,7 @@
         "floppy/passwordchange.bat",
         "floppy/eval-win81x86-enterprise/Autounattend.xml",
         "floppy/powerconfig.bat",
-        "floppy/update.bat",
+        "floppy/update81.bat",
         "floppy/zz-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
