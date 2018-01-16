@@ -21,6 +21,8 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--vram", "256"]
     v.customize ["setextradata", "global", "GUI/MaxGuestResolution", "any"]
     v.customize ["setextradata", :id, "CustomVideoMode1", "1024x768x32"]
+    v.customize ["modifyvm", :id, "--clipboard", "bidirectional" ]
+    v.customize ["modifyvm", :id, "--draganddrop", "bidirectional" ]
 
     config.trigger.before :destroy do
       id_file = ".vagrant/machines/default/virtualbox/id"
