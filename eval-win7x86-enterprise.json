@@ -75,11 +75,7 @@
           "modifyvm",
           "{{.Name}}",
           "--memory",
-<<<<<<< HEAD
-          "4096"
-=======
           "{{ user `memory` }}"
->>>>>>> 3ae141626b37db3886182789e615bdd8a846ab8e
         ],
         [
           "modifyvm",
