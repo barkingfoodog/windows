@@ -180,6 +180,9 @@ ver>nul
 :: Install git
 powershell.exe "choco install git --yes"
 
+:: Install PowerShell 5.0 or later
+powershell.exe "A:\powershell5.ps1"
+
 goto exit0
 
 ::::::::::::
