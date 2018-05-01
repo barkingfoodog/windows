@@ -7,6 +7,10 @@ if ($PSVersionTable.PSVersion.Major -ge 5) {
 # Require .NET FrameWork 4.5
 if (!(Get-ItemProperty -Path 'HKLM:\Software\Microsoft\NET Framework Setup\NDP\v4\Full' -ErrorAction SilentlyContinue).Version -like '4.5*') {
 	choco install dotnet4.5 -y
+
+    # Restart
+    Restart-Computer
+    exit 0
 }
 
 # Install PowerShell
