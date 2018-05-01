@@ -56,6 +56,7 @@
         "floppy/install-winrm.cmd",
         "floppy/oracle-cert.cer",
         "floppy/passwordchange.bat",
+        "floppy/powershell5.bat",
         "floppy/powerconfig.bat",
         "floppy/powershell5.ps1",
         "floppy/update.bat",

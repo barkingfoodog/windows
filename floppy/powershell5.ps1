@@ -11,4 +11,3 @@ if (!(Get-ItemProperty -Path 'HKLM:\Software\Microsoft\NET Framework Setup\NDP\v
 
 # Install PowerShell
 choco install powershell -y
-
