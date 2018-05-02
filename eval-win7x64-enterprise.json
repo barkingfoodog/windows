@@ -55,7 +55,6 @@
         "floppy/oracle-cert.cer",
         "floppy/passwordchange.bat",
         "floppy/powerconfig.bat",
-        "floppy/powershell5.bat",
         "floppy/powershell5.ps1",
         "floppy/upgrade-wua.bat",
         "floppy/win7x64-enterprise/Autounattend.xml",
@@ -151,6 +150,27 @@
     }
   ],
   "provisioners": [
+    {
+       "type": "windows-restart"
+    },
+    {
+      "scripts": [
+        "script/powershell5.bat"
+      ],
+      "type": "windows-shell"
+    },
+    {
+       "type": "windows-restart"
+    },
+    {
+      "scripts": [
+        "script/powershell5.bat"
+      ],
+      "type": "windows-shell"
+    },
+    {
+       "type": "windows-restart"
+    },   
     {
       "environment_vars": [
         "CM={{user `cm`}}",

@@ -57,7 +57,6 @@
         "floppy/oracle-cert.cer",
         "floppy/passwordchange.bat",
         "floppy/powerconfig.bat",
-        "floppy/powershell5.bat",
         "floppy/powershell5.ps1",
         "floppy/update.bat",
         "floppy/zz-start-transports.cmd"
