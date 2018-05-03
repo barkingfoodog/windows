@@ -170,7 +170,7 @@
     },
     {
        "type": "windows-restart"
-    },   
+    },
     {
       "environment_vars": [
         "CM={{user `cm`}}",

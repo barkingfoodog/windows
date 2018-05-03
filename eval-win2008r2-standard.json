@@ -145,6 +145,27 @@
   ],
   "provisioners": [
     {
+       "type": "windows-restart"
+    },
+    {
+      "scripts": [
+        "script/powershell5.bat"
+      ],
+      "type": "windows-shell"
+    },
+    {
+       "type": "windows-restart"
+    },
+    {
+      "scripts": [
+        "script/powershell5.bat"
+      ],
+      "type": "windows-shell"
+    },
+    {
+       "type": "windows-restart"
+    },
+    {
       "environment_vars": [
         "CM={{user `cm`}}",
         "CM_VERSION={{user `cm_version`}}",
