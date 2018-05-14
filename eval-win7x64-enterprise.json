@@ -9,7 +9,6 @@
         "floppy/_download.cmd",
         "floppy/_packer_config.cmd",
         "floppy/_post_update_install.bat",
-        "floppy/disablewinupdate.bat",
         "floppy/fixnetwork.ps1",
         "floppy/install-winrm.cmd",
         "floppy/networkprompt.bat",
@@ -18,6 +17,7 @@
         "floppy/upgrade-wua.bat",
         "floppy/win7x64-enterprise/Autounattend.xml",
         "floppy/update.bat",
+        "floppy/zz-disablewinupdate.bat",
         "floppy/zz-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
@@ -48,7 +48,6 @@
         "floppy/_download.cmd",
         "floppy/_packer_config.cmd",
         "floppy/_post_update_install.bat",
-        "floppy/disablewinupdate.bat",
         "floppy/fixnetwork.ps1",
         "floppy/install-winrm.cmd",
         "floppy/networkprompt.bat",
@@ -59,6 +58,7 @@
         "floppy/upgrade-wua.bat",
         "floppy/win7x64-enterprise/Autounattend.xml",
         "floppy/update.bat",
+        "floppy/zz-disablewinupdate.bat",
         "floppy/zz-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
@@ -101,7 +101,6 @@
         "floppy/_download.cmd",
         "floppy/_packer_config.cmd",
         "floppy/_post_update_install.bat",
-        "floppy/disablewinupdate.bat",
         "floppy/fixnetwork.ps1",
         "floppy/install-winrm.cmd",
         "floppy/networkprompt.bat",
@@ -110,6 +109,7 @@
         "floppy/upgrade-wua.bat",
         "floppy/win7x64-enterprise/Autounattend.xml",
         "floppy/update.bat",
+        "floppy/zz-disablewinupdate.bat",
         "floppy/zz-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
