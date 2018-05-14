@@ -54,6 +54,7 @@
         "floppy/oracle-cert.cer",
         "floppy/passwordchange.bat",
         "floppy/powerconfig.bat",
+        "floppy/powershell5.ps1",
         "floppy/win7x86-enterprise/Autounattend.xml",
         "floppy/update.bat",
         "floppy/zz-install-winrm.cmd",
@@ -146,6 +147,27 @@
     }
   ],
   "provisioners": [
+    {
+       "type": "windows-restart"
+    },
+    {
+      "scripts": [
+        "script/powershell5.bat"
+      ],
+      "type": "windows-shell"
+    },
+    {
+       "type": "windows-restart"
+    },
+    {
+      "scripts": [
+        "script/powershell5.bat"
+      ],
+      "type": "windows-shell"
+    },
+    {
+       "type": "windows-restart"
+    },
     {
       "environment_vars": [
         "CM={{user `cm`}}",

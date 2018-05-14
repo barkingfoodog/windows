@@ -50,6 +50,7 @@
         "floppy/oracle-cert.cer",
         "floppy/passwordchange.bat",
         "floppy/powerconfig.bat",
+        "floppy/powershell5.ps1",
         "floppy/zz-start-transports.cmd"
       ],
       "guest_additions_mode": "attach",
