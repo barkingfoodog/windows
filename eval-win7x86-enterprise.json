@@ -15,7 +15,6 @@
         "floppy/networkprompt.bat",
         "floppy/passwordchange.bat",
         "floppy/powerconfig.bat",
-        "floppy/upgrade-wua.bat",
         "floppy/win7x86-enterprise/Autounattend.xml",
         "floppy/update.bat",
         "floppy/zz-install-winrm.cmd",
