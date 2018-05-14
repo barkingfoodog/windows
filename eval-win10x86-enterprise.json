@@ -17,7 +17,6 @@
         "floppy/passwordchange.bat",
         "floppy/powerconfig.bat",
         "floppy/update.bat",
-        "floppy/zz-disablewinupdate.bat",
         "floppy/zz-start-transports.cmd"
       ],
       "guest_os_type": "windows9",
@@ -58,7 +57,6 @@
         "floppy/powerconfig.bat",
         "floppy/powershell5.ps1",
         "floppy/update.bat",
-        "floppy/zz-disablewinupdate.bat",
         "floppy/zz-start-transports.cmd"
       ],
       "guest_additions_mode": "attach",
@@ -114,7 +112,6 @@
         "floppy/passwordchange.bat",
         "floppy/powerconfig.bat",
         "floppy/update.bat",
-        "floppy/zz-disablewinupdate.bat",
         "floppy/zz-start-transports.cmd"
       ],
       "guest_os_type": "win-8.1",

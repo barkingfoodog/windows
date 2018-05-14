@@ -15,7 +15,6 @@
         "floppy/passwordchange.bat",
         "floppy/powerconfig.bat",
         "floppy/update81.bat",
-        "floppy/zz-disablewinupdate.bat",
         "floppy/zz-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
@@ -55,7 +54,6 @@
         "floppy/powerconfig.bat",
         "floppy/powershell5.ps1",
         "floppy/update81.bat",
-        "floppy/zz-disablewinupdate.bat",
         "floppy/zz-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
@@ -110,7 +108,6 @@
         "floppy/passwordchange.bat",
         "floppy/powerconfig.bat",
         "floppy/update81.bat",
-        "floppy/zz-disablewinupdate.bat",
         "floppy/zz-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],

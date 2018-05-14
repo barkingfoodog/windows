@@ -15,7 +15,6 @@
         "floppy/powerconfig.bat",
         "floppy/win2008r2-standard/Autounattend.xml",
         "floppy/update.bat",
-        "floppy/zz-disablewinupdate.bat",
         "floppy/zz-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
@@ -54,7 +53,6 @@
         "floppy/powershell5.ps1",
         "floppy/win2008r2-standard/Autounattend.xml",
         "floppy/update.bat",
-        "floppy/zz-disablewinupdate.bat",
         "floppy/zz-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
@@ -103,7 +101,6 @@
         "floppy/powerconfig.bat",
         "floppy/win2008r2-standard/Autounattend.xml",
         "floppy/update.bat",
-        "floppy/zz-disablewinupdate.bat",
         "floppy/zz-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],

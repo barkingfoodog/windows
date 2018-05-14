@@ -17,7 +17,6 @@
         "floppy/upgrade-wua.bat",
         "floppy/win7x64-enterprise/Autounattend.xml",
         "floppy/update.bat",
-        "floppy/zz-disablewinupdate.bat",
         "floppy/zz-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
@@ -58,7 +57,6 @@
         "floppy/upgrade-wua.bat",
         "floppy/win7x64-enterprise/Autounattend.xml",
         "floppy/update.bat",
-        "floppy/zz-disablewinupdate.bat",
         "floppy/zz-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],
@@ -109,7 +107,6 @@
         "floppy/upgrade-wua.bat",
         "floppy/win7x64-enterprise/Autounattend.xml",
         "floppy/update.bat",
-        "floppy/zz-disablewinupdate.bat",
         "floppy/zz-install-winrm.cmd",
         "floppy/zz-start-transports.cmd"
       ],

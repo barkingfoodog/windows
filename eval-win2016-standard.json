@@ -13,7 +13,6 @@
         "floppy/install-winrm.cmd",
         "floppy/passwordchange.bat",
         "floppy/powerconfig.bat",
-        "floppy/zz-disablewinupdate.bat",
         "floppy/zz-start-transports.cmd"
       ],
       "guest_os_type": "windows8srv-64",
@@ -50,7 +49,6 @@
         "floppy/passwordchange.bat",
         "floppy/powerconfig.bat",
         "floppy/powershell5.ps1",
-        "floppy/zz-disablewinupdate.bat",
         "floppy/zz-start-transports.cmd"
       ],
       "guest_additions_mode": "attach",
@@ -102,7 +100,6 @@
         "floppy/install-winrm.cmd",
         "floppy/passwordchange.bat",
         "floppy/powerconfig.bat",
-        "floppy/zz-disablewinupdate.bat",
         "floppy/zz-start-transports.cmd"
       ],
       "guest_os_type": "win-2016",
