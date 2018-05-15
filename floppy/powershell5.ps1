@@ -7,7 +7,6 @@ if ($PSVersionTable.PSVersion.Major -ge 5) {
 # Require .NET FrameWork 4.5
 if (!(Get-ItemProperty -Path 'HKLM:\Software\Microsoft\NET Framework Setup\NDP\v4\Full' -ErrorAction SilentlyContinue).Version -like '4.5*') {
 	choco install dotnet4.5 -y
-
     exit 0
 }
 
@@ -19,3 +18,4 @@ if (!(Get-Command psexec)) {
 # Install PowerShell over psexec
 # See https://serverfault.com/questions/559287/what-does-wusa-exe-return-code-5-mean
 psexec.exe -accepteula -u vagrant -p vagrant -h -i 1 powershell.exe -command "choco install powershell -y"
+exit 0

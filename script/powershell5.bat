@@ -7,3 +7,4 @@ IF %ERRORLEVEL% NEQ 0 (
 
 :: Install powershell5
 "%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -File "A:\powershell5.ps1"
+exit 0
