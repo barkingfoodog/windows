@@ -175,6 +175,7 @@
         "UPDATE={{user `update`}}"
       ],
       "scripts": [
+        "script/config_winrm.bat",
         "script/vagrant.bat",
         "script/cmtool.bat",
         "script/vmtool.bat",

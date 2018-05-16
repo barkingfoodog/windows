@@ -200,6 +200,7 @@
         "UPDATE={{user `update`}}"
       ],
       "scripts": [
+        "script/config_winrm.bat",
         "script/vmtool.bat",
         "script/clean.bat",
         "script/ultradefrag.bat",
